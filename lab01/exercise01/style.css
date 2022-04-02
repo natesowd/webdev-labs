@@ -9,3 +9,13 @@ body {
 /*
 Add some style blocks below this line to style the card.
 */
+body {
+    width: 498px;
+    padding: 10px;
+
+}
+
+.box {
+    margin-left: 20px;
+    margin-right: 20px;
+}
