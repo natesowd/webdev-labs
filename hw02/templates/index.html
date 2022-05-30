@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <title>HW1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a55143b9c7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {#
+    <nav> 
+        <h1><a href="home">Photo App</a></h1>
+        <ul>
+            <li><a href="username">Sarah</a></li><!--Placeholder for when usernames are added via python-->
+            <li><a href="sign_out">Sign Out</a></li>
+        </ul>
+    </nav>
+    #}
+    {% include 'includes/navbar.html' %}
+    <main>
+        <div class="template">
+            <div class="left_col">
+            
+            {#
+            <div class="stories">
+                <section class="story_card">
+                    <div class="story_img"><img src="https://picsum.photos/50/50"></div>
+                    <p class="story_user">Nate</p>
+                </section>
+                <section class="story_card">
+                    <div class="story_img"><img src="https://picsum.photos/50/50"></div>
+                    <p class="story_user">Orrian</p>
+                </section>
+                <section class="story_card">
+                    <div class="story_img"><img src="https://picsum.photos/50/50"></div>
+                    <p class="story_user">Jackson</p>
+                </section>
+                <section class="story_card">
+                    <div class="story_img"><img src="https://picsum.photos/50/50"></div>
+                    <p class="story_user">Owen</p>
+                </section>
+                <section class="story_card">
+                    <div class="story_img"><img src="https://picsum.photos/50/50"></div>
+                    <p class="story_user">Josh</p>
+                </section>
+            </div>
+            #}
+
+            {% include 'includes/stories.html' %}
+            <div class="posts">
+            {% include 'includes/cards.html' %}
+            </div>
+            {#
+            <div class="posts">
+                <section class="post_card">
+                    <div class="post_top">
+                        <p class="poster">Lucy</p>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="post_img"><img src="https://picsum.photos/700/350"></div>
+                    <div class="post_content">
+                        <div class="my_symbols">
+                            <p class="interact_symbols">&hearts;&#128488;
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </p>
+                            <div class="bookmark"><i class="fa-solid fa-bookmark"></i></div>
+                        </div>
+                        <p class="likes"><b>500 likes</b></p>
+                        <p class="caption"><b>Jesse</b> is my favorite person in the world is Orrian
+                            <button>more</button>
+                        </p>
+                        <p class="comment"><b>Mia</b>
+                            Yea he's super handsome
+                        </p>
+                        <p class="comment"><b>Emma</b>
+                            Slay Queen
+                        </p>
+                        <p>2 HOURS AGO</p>
+                        <div class="add_comment">
+                        <p class="comment_box">
+                            &#x263A;  Add a Comment...
+                        </p>
+                        <button class="post_button">post</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="post_card">
+                    <div class="post_top">
+                        <p class="poster">Lucy</p>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="post_img"><img src="https://picsum.photos/700/350"></div>
+                    <div class="post_content">
+                        <div class="my_symbols">
+                            <p class="interact_symbols">&hearts;&#128488;
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </p>
+                            <div class="bookmark"><i class="fa-solid fa-bookmark"></i></div>
+                        </div>
+                        <p class="likes"><b>500 likes</b></p>
+                        <p class="caption"><b>Jesse</b> is my favorite person in the world is Orrian
+                            <button>more</button>
+                        </p>
+                        <p class="comment"><b>Mia</b>
+                            Yea he's super handsome
+                        </p>
+                        <p class="comment"><b>Emma</b>
+                            Slay Queen
+                        </p>
+                        <p>2 HOURS AGO</p>
+                        <div class="add_comment">
+                        <p class="comment_box">
+                            &#x263A;  Add a Comment...
+                        </p>
+                        <button class="post_button">post</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="post_card">
+                    <div class="post_top">
+                        <p class="poster">Lucy</p>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="post_img"><img src="https://picsum.photos/700/350"></div>
+                    <div class="post_content">
+                        <div class="my_symbols">
+                            <p class="interact_symbols">&hearts;&#128488;
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </p>
+                            <div class="bookmark"><i class="fa-solid fa-bookmark"></i></div>
+                        </div>
+                        <p class="likes"><b>500 likes</b></p>
+                        <p class="caption"><b>Jesse</b> is my favorite person in the world is Orrian
+                            <button>more</button>
+                        </p>
+                        <p class="comment"><b>Mia</b>
+                            Yea he's super handsome
+                        </p>
+                        <p class="comment"><b>Emma</b>
+                            Slay Queen
+                        </p>
+                        <p>2 HOURS AGO</p>
+                        <div class="add_comment">
+                        <p class="comment_box">
+                            &#x263A;  Add a Comment...
+                        </p>
+                        <button class="post_button">post</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="post_card">
+                    <div class="post_top">
+                        <p class="poster">Lucy</p>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="post_img"><img src="https://picsum.photos/700/350"></div>
+                    <div class="post_content">
+                        <div class="my_symbols">
+                            <p class="interact_symbols">&hearts;&#128488;
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </p>
+                            <div class="bookmark"><i class="fa-solid fa-bookmark"></i></div>
+                        </div>
+                        <p class="likes"><b>500 likes</b></p>
+                        <p class="caption"><b>Jesse</b> is my favorite person in the world is Orrian
+                            <button>more</button>
+                        </p>
+                        <p class="comment"><b>Mia</b>
+                            Yea he's super handsome
+                        </p>
+                        <p class="comment"><b>Emma</b>
+                            Slay Queen
+                        </p>
+                        <p>2 HOURS AGO</p>
+                        <div class="add_comment">
+                        <p class="comment_box">
+                            &#x263A;  Add a Comment...
+                        </p>
+                        <button class="post_button">post</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="post_card">
+                    <div class="post_top">
+                        <p class="poster">Lucy</p>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="post_img"><img src="https://picsum.photos/700/350"></div>
+                    <div class="post_content">
+                        <div class="my_symbols">
+                            <p class="interact_symbols">&hearts;&#128488;
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </p>
+                            <div class="bookmark"><i class="fa-solid fa-bookmark"></i></div>
+                        </div>
+                        <p class="likes"><b>500 likes</b></p>
+                        <p class="caption"><b>Jesse</b> is my favorite person in the world is Orrian
+                            <button>more</button>
+                        </p>
+                        <p class="comment"><b>Mia</b>
+                            Yea he's super handsome
+                        </p>
+                        <p class="comment"><b>Emma</b>
+                            Slay Queen
+                        </p>
+                        <p>2 HOURS AGO</p>
+                        <div class="add_comment">
+                        <p class="comment_box">
+                            &#x263A;  Add a Comment...
+                        </p>
+                        <button class="post_button">post</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            #}
+            </div>
+            {#
+            <div class="aside">
+                <section class="User_Card">
+                    <div class="user_img"><img src="https://picsum.photos/80/80"></div>
+                    <p>Sarah</p>
+                </section>
+                <div> <p> Suggestions for you </p> </div>
+                <section class="Rec_Cards">
+                    <div class="rec_img"><img src="https://picsum.photos/50/50"></div>
+                    <div class="rec_text">
+                        <p class="user">Rob</p> <!--Placeholder for when usernames are added via python-->
+                        <p class="sugg">suggested for you</p>
+                    </div>
+                    <button><a href="follow">Follow</a></button>
+                </section>
+                <section class="Rec_Cards">
+                    <div class="rec_img"><img src="https://picsum.photos/50/50"></div>
+                    <div class="rec_text">
+                        <p class="user">JJ</p> <!--Placeholder for when usernames are added via python-->
+                        <p class="sugg">suggested for you</p>
+                    </div>
+                    <button><a href="follow">Follow</a></button>
+                </section>
+                <section class="Rec_Cards">
+                    <div class="rec_img"><img src="https://picsum.photos/50/50"></div>
+                    <div class="rec_text">
+                        <p class="user">Gary</p> <!--Placeholder for when usernames are added via python-->
+                        <p class="sugg">suggested for you</p>
+                    </div>
+                    <button><a href="follow">Follow</a></button>
+                </section>
+                <section class="Rec_Cards">
+                    <div class="rec_img"><img src="https://picsum.photos/50/50"></div>
+                    <div class="rec_text">
+                        <p class="user">Conner</p> <!--Placeholder for when usernames are added via python-->
+                        <p class="sugg">suggested for you</p>
+                    </div>
+                    <button><a href="follow">Follow</a></button>
+                </section>
+                <section class="Rec_Cards">
+                    <div class="rec_img"><img src="https://picsum.photos/50/50"></div>
+                    <div class="rec_text">
+                        <p class="user">Matt</p> <!--Placeholder for when usernames are added via python-->
+                        <p class="sugg">suggested for you</p>
+                    </div>
+                    <button><a href="follow">Follow</a></button>
+                </section>
+            </div>
+            #}
+            {% include 'includes/suggestions.html' %}
+        </div>
+    </main>
+</body>
+</html>

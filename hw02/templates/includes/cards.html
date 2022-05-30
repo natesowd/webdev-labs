@@ -1,0 +1,40 @@
+{% for item in posts %}
+<section class="post_card">
+    <div class="post_top">
+        <p class="poster">{{ item['user'].get('username') }}</p>
+        <i class="fa-solid fa-ellipsis"></i>
+    </div>
+    <div class="post_img"><img src="{{ item.get('image_url') }}" alt="{{ item.get('image_url') }}"></div>
+    <div class="post_content">
+        <div class="my_symbols">
+            <p class="interact_symbols">&hearts;&#128488;
+                <i class="fa-regular fa-paper-plane"></i>
+            </p>
+            <div class="bookmark"><i class="fa-solid fa-bookmark"></i></div>
+        </div>
+        <p class="likes"><b>{{ item.get('likes') }} likes</b></p>
+        <p class="caption"><b>{{ item['user'].get('username') }}</b>
+            {{ item['user'].get('title') }}
+            <button>more</button>
+        </p>
+    {% if item['comments']|length > 1 %}
+        <button class="view_more">View all {{ item['comments']|length }} comments</button>
+        <p class="comment"><b>{{ item['comments'][0]['user'].get('username') }}</b>
+            {{ item['comments'][0].get('text')}}
+        </p>
+        {% elif item['comments']|length == 0 %}
+        {% else %}
+        <p class="comment"><b>{{ item['comments'][0]['user'].get('username') }}</b>
+            {{ item['comments'][0].get('text')}}
+        </p>
+    {% endif %}
+        <p>{{ item['display_time'] }}</p>
+        <div class="add_comment">
+        <p class="comment_box">
+            &#x263A;  Add a Comment...
+        </p>
+        <button class="post_button">post</button>
+        </div>
+    </div>
+</section>
+{% endfor %}

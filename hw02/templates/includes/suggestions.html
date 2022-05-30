@@ -1,0 +1,71 @@
+<body>
+
+    <div class="aside">
+        <section class="User_Card">
+            <div class="user_img"><img src={{ user.get('image_url') }} alt="{{ user.get('image_url') }}"></div>
+            <p>{{ user.get('username') }}</p>
+        </section>
+        <div> <p> Suggestions for you </p> </div>
+            {% for item in suggestions %}
+            <section class="Rec_Cards">
+                    <div class="rec_img"><img src={{ item.get('image_url') }} alt="{{ item.get('image_url') }}"></div>
+                    <div class="rec_text">
+                        <p class="user">{{ item.get('username') }}</p> 
+                        <p class="sugg">suggested for you</p>
+                    </div>
+                    <button><a href="follow">Follow</a></button>
+            
+            </section>
+            {% endfor %}
+
+    {#
+        <section class="User_Card">
+            <div class="user_img"><img src={{ user.get('image_url') }}></div>
+            <p>{{ user.get('username') }}</p>
+        </section>
+        <div> <p> Suggestions for you </p> </div>
+        <section class="Rec_Cards">
+            <div class="rec_img"><img src={{ suggestions[0].get('image_url') }}></div>
+            <div class="rec_text">
+                <p class="user">{{ suggestions[0].get('username') }}</p> <!--Placeholder for when usernames are added via python-->
+                <p class="sugg">suggested for you</p>
+            </div>
+            <button><a href="follow">Follow</a></button>
+        </section>
+        <section class="Rec_Cards">
+            <div class="rec_img"><img src={{ suggestions[1].get('image_url') }}></div>
+            <div class="rec_text">
+                <p class="user">{{ suggestions[1].get('username') }}</p> <!--Placeholder for when usernames are added via python-->
+                <p class="sugg">suggested for you</p>
+            </div>
+            <button><a href="follow">Follow</a></button>
+        </section>
+        <section class="Rec_Cards">
+            <div class="rec_img"><img src={{ suggestions[2].get('image_url') }}></div>
+            <div class="rec_text">
+                <p class="user">{{ suggestions[2].get('username') }}</p> <!--Placeholder for when usernames are added via python-->
+                <p class="sugg">suggested for you</p>
+            </div>
+            <button><a href="follow">Follow</a></button>
+        </section>
+        <section class="Rec_Cards">
+            <div class="rec_img"><img src={{ suggestions[3].get('image_url') }}></div>
+            <div class="rec_text">
+                <p class="user">{{ suggestions[3].get('username') }}</p> <!--Placeholder for when usernames are added via python-->
+                <p class="sugg">suggested for you</p>
+            </div>
+            <button><a href="follow">Follow</a></button>
+        </section>
+        <section class="Rec_Cards">
+            <div class="rec_img"><img src={{ suggestions[4].get('image_url') }}></div>
+            <div class="rec_text">
+                <p class="user">{{ suggestions[4].get('username') }}</p> <!--Placeholder for when usernames are added via python-->
+                <p class="sugg">suggested for you</p>
+            </div>
+            <button><a href="follow">Follow</a></button>
+        </section>
+    #}
+    </div>
+
+    
+</body>
