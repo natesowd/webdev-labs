@@ -14,7 +14,7 @@ class StoriesListEndpoint(Resource):
         # print(get_authorized_user_ids(self.current_user))
         follows = get_authorized_user_ids(self.current_user)
         #follows.append(self.current_user.id)
-        stories = Story.query.filter(Story.user_id.in_(follows)).all()
+        stories = Story.query.filter(Story.user_id.in_(follows)).limit(7)
         #stories.append(Story.query.filter(Story.id.in_(self.current_user.id)))
         #print(stories[0])
         return Response(json.dumps([story.to_dict() for story in stories]), mimetype="application/json", status=200)

@@ -19,11 +19,11 @@ class CommentListEndpoint(Resource):
             return Response(json.dumps({"message": "Error: no post id found"}), mimetype="application/json", status=400)
         
         posts = Post.query.get(id)
-        try:
-            if posts.user_id != self.current_user.id:
-                return Response(json.dumps({"message": "Error: invalid id"}), mimetype="application/json", status=404)
-        except:
-            return Response(json.dumps({"message": "Error: invalid id"}), mimetype="application/json", status=404)
+        # try:
+        #     if posts.user_id != self.current_user.id:
+        #         return Response(json.dumps({"message": "Error: invalid id"}), mimetype="application/json", status=404)
+        # except:
+        #     return Response(json.dumps({"message": "Error: invalid id"}), mimetype="application/json", status=404)
 
         if not body.get('text'):
             return Response(json.dumps({"message": "Error: no text for comment found"}), mimetype="application/json", status = 400)

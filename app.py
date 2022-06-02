@@ -8,9 +8,13 @@ import os
 from sqlalchemy import and_
 from models import db, Post, User, Following, ApiNavigator, Story
 from views import initialize_routes, get_authorized_user_ids
+import fake_data
 
 
 app = Flask(__name__)
+#app = Flask(__name__, 
+ #           static_folder='/static')
+
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URL')
@@ -31,13 +35,27 @@ initialize_routes(api)
 # Server-side template for the homepage:
 @app.route('/')
 def home():
-    return '''
-       <p>View <a href="/api">REST API Tester</a>.</p>
-       <p>Feel free to replace this code from HW2</p>
-    '''
+    current_user = fake_data.generate_user()
+    return render_template(
+        'starter-client copy.html', 
+        user = app.current_user.to_dict(), # user = app.current_user / remember this change
+        posts=fake_data.generate_posts(n=8),
+        stories=fake_data.generate_stories(n=6),
+        suggestions=fake_data.generate_suggestions(n=7)
+    )
+
+@app.route('/lab6')
+def lab6():
+    current_user = fake_data.generate_user()
+    return render_template(
+        'lab6.html', 
+        user=app.current_user, # user = app.current_user / remember this change
+    )
+
 
 
 @app.route('/api')
+@app.route('/api/')
 def api_docs():
     navigator = ApiNavigator(app.current_user)
     return render_template(

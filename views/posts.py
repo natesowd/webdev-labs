@@ -27,8 +27,13 @@ class PostListEndpoint(Resource):
         if limit > 50 or limit <1:
             return Response(json.dumps({"message":"Error: please enter an integer in range 1-50"}), mimetype="application/json", status=400)
         follows = get_authorized_user_ids(self.current_user)
-        posts = Post.query.filter(Post.user_id.in_(follows)).limit(limit).all()
-        return Response(json.dumps([post.to_dict() for post in posts]), mimetype="application/json", status=200)
+        posts = Post.query.filter(Post.user_id.in_(follows)).limit(10)
+
+        return Response(json.dumps([post.to_dict(user=self.current_user) for post in posts]), mimetype="application/json", status=200)
+        #data = [
+        #post.to_dict(user=self.current_user) for post in posts
+    #]
+        #return Response(json.dumps(data), mimetype="application/json", status=200)
 
     def post(self):
         # create a new post based on the data posted in the body 
@@ -99,7 +104,8 @@ class PostDetailEndpoint(Resource):
         user_ids = get_authorized_user_ids(self.current_user)
         if post.user_id not in user_ids:
             return Response(json.dumps({"message":"Error: please enter a valid id number"}), mimetype="application/json", status=404)
-        return Response(json.dumps(post.to_dict()), mimetype="application/json", status=200)
+        #return Response(json.dumps(post.to_dict()), mimetype="application/json", status=200)
+        return Response(json.dumps(post.to_dict(user=self.current_user)), mimetype="application/json", status=200)
 
 def initialize_routes(api):
     api.add_resource(
